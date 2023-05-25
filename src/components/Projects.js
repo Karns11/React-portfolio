@@ -134,7 +134,7 @@ const Projects = () => {
               <Button onClick={handleShowNbaStatsModal} className="mx-2">
                 More Info
               </Button>
-              <Button href="https://jade-dragon-615e52.netlify.app/">
+              <Button href="https://natesnbastatsapp.netlify.app/">
                 Live Demo
               </Button>
             </div>
