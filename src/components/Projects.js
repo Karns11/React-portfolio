@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import workoutApp from "../assets/workout-app-vid.mp4";
 import proshop from "../assets/proshop-vid.mp4";
 import toDo from "../assets/mern-todo.mp4";
+import NbaStats from "../assets/NBA-Stats.jpg";
 import { Button, Col, Container, Modal, Row } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -10,6 +11,7 @@ const Projects = () => {
   const [showFitnessModal, setShowFitnessModal] = useState(false);
   const [showProshopModal, setShowProshopModal] = useState(false);
   const [showTodoModal, setShowTodoModal] = useState(false);
+  const [showNbaStatsModal, setShowNbaStatsModal] = useState(false);
 
   const handleCloseFitnessModal = () => setShowFitnessModal(false);
   const handleShowFitnessModal = () => setShowFitnessModal(true);
@@ -19,6 +21,9 @@ const Projects = () => {
 
   const handleCloseTodoModal = () => setShowTodoModal(false);
   const handleShowTodoModal = () => setShowTodoModal(true);
+
+  const handleCloseNbaStatsModal = () => setShowNbaStatsModal(false);
+  const handleShowNbaStatsModal = () => setShowNbaStatsModal(true);
 
   useEffect(() => {
     AOS.init({ duration: 2000 });
@@ -112,6 +117,33 @@ const Projects = () => {
               </div>
             </Col>
           </Row>
+
+          <Row className="d-flex">
+            <Col
+              data-aos="fade-right"
+              style={{
+                border: "2px solid black",
+                borderRadius: "15px",
+                boxShadow: "1rem 1rem 2rem black",
+              }}
+              className="my-5 proj-card"
+            >
+              <h3 className="pt-2 text-light project-name">NBA STATS APP</h3>
+              <img
+                className="proj-img"
+                src={NbaStats}
+                alt="NBA stats app"
+              ></img>
+              <div className="proj-buttons mb-5">
+                <Button onClick={handleShowNbaStatsModal} className="mx-2">
+                  More Info
+                </Button>
+                <Button href="https://jade-dragon-615e52.netlify.app/">
+                  Live Demo
+                </Button>
+              </div>
+            </Col>
+          </Row>
         </Container>
       </div>
 
@@ -146,7 +178,6 @@ const Projects = () => {
             <Button
               className="modal-code-button"
               variant="secondary"
-              onClick={handleCloseFitnessModal}
               href="https://github.com/Karns11/Lets-Fit-Swole"
             >
               Source Code
@@ -184,7 +215,6 @@ const Projects = () => {
             <Button
               className="modal-code-button"
               variant="secondary"
-              onClick={handleCloseFitnessModal}
               href="https://github.com/Karns11/MERN-app"
             >
               Source Code
@@ -213,15 +243,50 @@ const Projects = () => {
             <Button
               className="modal-close-button"
               variant="secondary"
-              onClick={handleCloseFitnessModal}
+              onClick={handleCloseTodoModal}
             >
               Close
             </Button>
             <Button
               className="modal-code-button"
               variant="secondary"
-              onClick={handleCloseFitnessModal}
               href="https://github.com/Karns11/MERN-Todo-App"
+            >
+              Source Code
+            </Button>
+          </div>
+        </Modal.Footer>
+      </Modal>
+      <Modal show={showNbaStatsModal} onHide={handleCloseNbaStatsModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>MERN STACK TO-DO APP</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Introducing an NBA stats application developed with React and
+          Bootstrap! This dynamic application leverages the power of the
+          balldontlie API to provide users with comprehensive NBA statistics. By
+          using Axios, I seamlessly made API requests to retrieve real-time
+          data, ensuring up-to-date information. Originally designed with a
+          focus on sports betting, this application empowers users to make
+          informed decisions. With a sleek and intuitive user interface, users
+          can easily navigate through player and team stats, game results, and
+          historical data. Stay on top of the game, analyze trends, and gain
+          insights to enhance your sports betting strategies with this powerful
+          NBA stats application.
+        </Modal.Body>
+        <Modal.Footer>
+          <div className="modal-buttons">
+            <Button
+              className="modal-close-button"
+              variant="secondary"
+              onClick={handleCloseNbaStatsModal}
+            >
+              Close
+            </Button>
+            <Button
+              className="modal-code-button"
+              variant="secondary"
+              href="https://github.com/Karns11/New-NBA-App"
             >
               Source Code
             </Button>
