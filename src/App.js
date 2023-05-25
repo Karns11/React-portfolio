@@ -62,7 +62,7 @@ function App() {
                     className="form-control"
                     placeholder="Enter Name"
                   />
-                  <label for="name" class="form-label">
+                  <label htmlFor="name" className="form-label">
                     Name
                   </label>
                 </div>
@@ -75,7 +75,7 @@ function App() {
                     className="form-control"
                     placeholder="Enter Email"
                   />
-                  <label for="email" className="form-label">
+                  <label htmlFor="email" className="form-label">
                     Email
                   </label>
                 </div>
@@ -99,7 +99,7 @@ function App() {
                     name="message"
                     style={{ height: "175px" }}
                   />
-                  <label for="message" className="form-label">
+                  <label htmlFor="message" className="form-label">
                     Message
                   </label>
                 </div>

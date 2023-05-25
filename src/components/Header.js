@@ -5,8 +5,8 @@ import logo from "../assets/logo-white.png";
 const Header = () => {
   return (
     <header className="header">
-      <div class="header__logo-box">
-        <img src={logo} alt="Logo" class="header__logo" />
+      <div className="header__logo-box">
+        <img src={logo} alt="Logo" className="header__logo" />
       </div>
       <div className="header__showcase">
         <div className="header__showcase-pic-container">

@@ -3,7 +3,7 @@ import workoutApp from "../assets/workout-app-vid.mp4";
 import proshop from "../assets/proshop-vid.mp4";
 import toDo from "../assets/mern-todo.mp4";
 import NbaStats from "../assets/NBA-Stats.jpg";
-import { Button, Col, Container, Modal, Row } from "react-bootstrap";
+import { Button, Col, Modal, Row } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -30,121 +30,163 @@ const Projects = () => {
   }, []);
 
   return (
-    <section id="Projects">
-      <div className="container text-center">
+    <section id="Projects" className="bg-light">
+      <div className="container proj-container text-center">
         <h2 className="mb-4 fw-bold project-heading">Projects</h2>
-        <Container>
-          <Row className="d-flex">
-            <Col
-              data-aos="fade-right"
-              style={{
-                border: "2px solid black",
-                borderRadius: "15px",
-                boxShadow: "1rem 1rem 2rem black",
-              }}
-              className="my-5 proj-card"
-            >
-              <h3 className="pt-2 text-light project-name">
-                "Let's Fit Swole" Fitness App
-              </h3>
-              <video controls loop className="video-fluid w-50">
-                <source src={workoutApp} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <div className="proj-buttons mb-5">
-                <Button onClick={handleShowFitnessModal} className="mx-2">
-                  More Info
-                </Button>
-                <Button href="https://github.com/Karns11/Lets-Fit-Swole">
-                  Source Code
-                </Button>
-              </div>
-            </Col>
-          </Row>
 
-          <Row className="d-flex">
-            <Col
-              data-aos="fade-left"
-              style={{
-                border: "2px solid black",
-                borderRadius: "15px",
-                boxShadow: "1rem 1rem 2rem black",
-              }}
-              className="my-5 proj-card"
-            >
-              <h3 className="pt-2 text-light project-name">
-                "ProShop" eCommerce Site
-              </h3>
-              <video controls loop className="video-fluid w-50">
-                <source src={proshop} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <div className="proj-buttons mb-5">
-                <Button onClick={handleShowProshopModal} className="mx-2">
-                  More Info
-                </Button>
-                <Button href="https://github.com/Karns11/MERN-app">
-                  Source Code
-                </Button>
-              </div>
-            </Col>
-          </Row>
+        <Row className="d-flex">
+          <Col
+            data-aos="fade-right"
+            style={{
+              border: "2px solid black",
+              borderRadius: "15px",
+              boxShadow: "1rem 1rem 2rem black",
+            }}
+            className="my-5 proj-card"
+          >
+            <h3 className="pt-2 text-light project-name">
+              "Let's Fit Swole" Fitness App
+            </h3>
+            <video controls loop className="video-fluid w-50">
+              <source src={workoutApp} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="proj-buttons mb-5">
+              <Button onClick={handleShowFitnessModal} className="mx-2">
+                More Info
+              </Button>
+              <Button href="https://github.com/Karns11/Lets-Fit-Swole">
+                Source Code
+              </Button>
+            </div>
+          </Col>
+        </Row>
 
-          <Row className="d-flex">
-            <Col
-              data-aos="fade-right"
-              style={{
-                border: "2px solid black",
-                borderRadius: "15px",
-                boxShadow: "1rem 1rem 2rem black",
-              }}
-              className="my-5 proj-card"
-            >
-              <h3 className="pt-2 text-light project-name">
-                MERN Stack To-Do App
-              </h3>
-              <video controls loop className="video-fluid w-50">
-                <source src={toDo} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <div className="proj-buttons mb-5">
-                <Button onClick={handleShowTodoModal} className="mx-2">
-                  More Info
-                </Button>
-                <Button href="https://github.com/Karns11/MERN-Todo-App">
-                  Source Code
-                </Button>
-              </div>
-            </Col>
-          </Row>
+        <Row className="d-flex">
+          <Col
+            data-aos="fade-left"
+            style={{
+              border: "2px solid black",
+              borderRadius: "15px",
+              boxShadow: "1rem 1rem 2rem black",
+            }}
+            className="my-5 proj-card"
+          >
+            <h3 className="pt-2 text-light project-name">
+              "ProShop" eCommerce Site
+            </h3>
+            <video controls loop className="video-fluid w-50">
+              <source src={proshop} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="proj-buttons mb-5">
+              <Button onClick={handleShowProshopModal} className="mx-2">
+                More Info
+              </Button>
+              <Button href="https://github.com/Karns11/MERN-app">
+                Source Code
+              </Button>
+            </div>
+          </Col>
+        </Row>
 
-          <Row className="d-flex">
-            <Col
-              data-aos="fade-right"
-              style={{
-                border: "2px solid black",
-                borderRadius: "15px",
-                boxShadow: "1rem 1rem 2rem black",
-              }}
-              className="my-5 proj-card"
-            >
-              <h3 className="pt-2 text-light project-name">NBA STATS APP</h3>
-              <img
-                className="proj-img"
-                src={NbaStats}
-                alt="NBA stats app"
-              ></img>
-              <div className="proj-buttons mb-5">
-                <Button onClick={handleShowNbaStatsModal} className="mx-2">
-                  More Info
-                </Button>
-                <Button href="https://jade-dragon-615e52.netlify.app/">
-                  Live Demo
-                </Button>
-              </div>
-            </Col>
-          </Row>
-        </Container>
+        <Row className="d-flex">
+          <Col
+            data-aos="fade-right"
+            style={{
+              border: "2px solid black",
+              borderRadius: "15px",
+              boxShadow: "1rem 1rem 2rem black",
+            }}
+            className="my-5 proj-card"
+          >
+            <h3 className="pt-2 text-light project-name">
+              MERN Stack To-Do App
+            </h3>
+            <video controls loop className="video-fluid w-50">
+              <source src={toDo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="proj-buttons mb-5">
+              <Button onClick={handleShowTodoModal} className="mx-2">
+                More Info
+              </Button>
+              <Button href="https://github.com/Karns11/MERN-Todo-App">
+                Source Code
+              </Button>
+            </div>
+          </Col>
+        </Row>
+
+        <Row className="d-flex">
+          <Col
+            data-aos="fade-left"
+            style={{
+              border: "2px solid black",
+              borderRadius: "15px",
+              boxShadow: "1rem 1rem 2rem black",
+            }}
+            className="my-5 proj-card"
+          >
+            <h3 className="pt-2 text-light project-name">NBA STATS APP</h3>
+            <img className="proj-img" src={NbaStats} alt="NBA stats app"></img>
+            <div className="proj-buttons mb-5">
+              <Button onClick={handleShowNbaStatsModal} className="mx-2">
+                More Info
+              </Button>
+              <Button href="https://jade-dragon-615e52.netlify.app/">
+                Live Demo
+              </Button>
+            </div>
+          </Col>
+        </Row>
+      </div>
+
+      <div className="container">
+        <div className="experience-title">
+          <h1>Experience</h1>
+        </div>
+
+        <details
+          data-aos="fade-right"
+          style={{
+            border: "3px solid black",
+            padding: "2rem",
+            marginBottom: "2rem",
+            boxShadow: "1rem 1rem 2rem black",
+            borderRadius: "1rem",
+          }}
+        >
+          <summary style={{ fontWeight: "bold" }}>Data Analyst</summary>
+          <h3>Spartan Analytics Consulting Group</h3>
+          <p>
+            • Demonstrated leadership and analytical skills as an analyst where
+            I analyzed data to develop statistical models and provide process
+            improvement recommendations to local businesses which increased
+            sales by 20%.
+          </p>
+        </details>
+        <details
+          data-aos="fade-left"
+          style={{
+            border: "3px solid black",
+            padding: "2rem",
+            marginBottom: "2rem",
+            boxShadow: "1rem 1rem 2rem black",
+            borderRadius: "1rem",
+          }}
+        >
+          <summary style={{ fontWeight: "bold" }}>
+            Data Analytics Intern
+          </summary>
+          <h3>McNaughton-McKay</h3>
+          <p>
+            • Designed, developed, and implemented an innovative application to
+            automate the price checking processes, resulting in a 25%
+            improvement in time efficiency for the sales team and significant
+            increase in pricing accuracy.
+          </p>
+        </details>
       </div>
 
       {/* MODALS */}
