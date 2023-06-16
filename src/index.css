@@ -371,3 +371,24 @@ ul {
 details {
   animation: moveUpDown 5s infinite;
 }
+
+.swole-btn {
+  background-color: #fff;
+  color: #00df9a;
+}
+
+.modal-close-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.modal-close-icon:hover {
+  cursor: pointer;
+  opacity: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}

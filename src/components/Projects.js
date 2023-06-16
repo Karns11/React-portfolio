@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-import workoutApp from "../assets/workout-app-vid.mp4";
-import proshop from "../assets/proshop-vid.mp4";
 import toDo from "../assets/mern-todo.mp4";
 import NbaStats from "../assets/NBA-Stats.jpg";
 import { Button, Col, Modal, Row } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import letsFitSwole from "../assets/letsfitswole.png"
+import proshop from "../assets/proshop.png"
+
+import {Button as MuiButton, Modal as MuiModal, Typography} from '@mui/material'
+import Box from '@mui/material/Box';
 
 const Projects = () => {
   const [showFitnessModal, setShowFitnessModal] = useState(false);
@@ -47,17 +50,14 @@ const Projects = () => {
             <h3 className="pt-2 text-light project-name">
               "Let's Fit Swole" Fitness App
             </h3>
-            <video controls loop className="video-fluid w-50">
-              <source src={workoutApp} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <img className="proj-img" src={letsFitSwole} alt='lets fit swole' />
             <div className="proj-buttons mb-5">
-              <Button onClick={handleShowFitnessModal} className="mx-2">
+              <MuiButton variant="contained" color='secondary' className='swole-btn mx-2' onClick={handleShowFitnessModal}>
                 More Info
-              </Button>
-              <Button href="https://github.com/Karns11/Lets-Fit-Swole">
-                Source Code
-              </Button>
+              </MuiButton>
+              <MuiButton variant="contained" color='secondary' href="https://letsfitswole.onrender.com">
+                Live Demo
+              </MuiButton>
             </div>
           </Col>
         </Row>
@@ -75,17 +75,14 @@ const Projects = () => {
             <h3 className="pt-2 text-light project-name">
               "ProShop" eCommerce Site
             </h3>
-            <video controls loop className="video-fluid w-50">
-              <source src={proshop} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <img className="proj-img" src={proshop} alt='proshop' />
             <div className="proj-buttons mb-5">
-              <Button onClick={handleShowProshopModal} className="mx-2">
+              <MuiButton variant="contained" color='secondary' onClick={handleShowProshopModal} className="mx-2">
                 More Info
-              </Button>
-              <Button href="https://github.com/Karns11/MERN-app">
-                Source Code
-              </Button>
+              </MuiButton>
+              <MuiButton variant="contained" color='secondary' href="https://proshop-7ryx.onrender.com/">
+                Live Demo
+              </MuiButton>
             </div>
           </Col>
         </Row>
@@ -190,7 +187,70 @@ const Projects = () => {
       </div>
 
       {/* MODALS */}
-      <Modal show={showFitnessModal} onHide={handleCloseFitnessModal}>
+
+      <MuiModal
+            open={showFitnessModal}
+            onClose={handleCloseFitnessModal}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box
+              className="modal-box"
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)", // Adjust width based on screen size
+                maxWidth: 800, // Set maximum width for larger screens
+                bgcolor: "background.paper",
+                border: "2px solid #000",
+                boxShadow: 24,
+                p: 4,
+                overflowY: "auto", // Add scrollable behavior
+                maxHeight: "80vh", // Set maximum height for the modal content
+              }}
+            >
+              <Row>
+                <Col>
+                  <Typography
+                    id="modal-modal-title"
+                    variant="h6"
+                    component="h2"
+                  >
+                    LET'S FIT SWOLE
+                  </Typography>
+                </Col>
+                <Col className="modal-close-icon" onClick={handleCloseFitnessModal} xs={1}>
+                  <i className="fa-solid fa-xmark"></i>
+                </Col>
+              </Row>
+
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              Introducing a dynamic MERN fitness app! Created through self-taught
+          skills, this app revolutionizes your fitness journey. With a
+          user-friendly interface, it empowers individuals to customize workouts
+          according to their preferences and fitness goals. The app goes beyond
+          individual training, fostering a collaborative community where users
+          can connect, motivate, and support each other. By categorizing
+          workouts by day, users can easily plan and track their progress
+          throughout the week, ensuring a well-rounded fitness routine.
+          Developed with passion and dedication, this MERN fitness app is poised
+          to make a significant impact on the lives of fitness enthusiasts. Stay
+          tuned for its imminent deployment and embark on a transformative
+          fitness experience.
+              </Typography>
+
+
+
+
+                <MuiButton href='https://github.com/Karns11/NewWorkoutApp' className="mt-5" variant="contained" color="secondary" type="submit">
+                  Source Code
+                </MuiButton>
+
+            </Box>
+          </MuiModal>
+
+      {/* <Modal show={showFitnessModal} onHide={handleCloseFitnessModal}>
         <Modal.Header closeButton>
           <Modal.Title>"LET'S FIT SWOLE FITNESS APP</Modal.Title>
         </Modal.Header>
@@ -226,8 +286,71 @@ const Projects = () => {
             </Button>
           </div>
         </Modal.Footer>
-      </Modal>
-      <Modal show={showProshopModal} onHide={handleCloseProshopModal}>
+      </Modal> */}
+
+          <MuiModal
+            open={showProshopModal}
+            onClose={handleCloseProshopModal}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box
+              className="modal-box"
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)", // Adjust width based on screen size
+                maxWidth: 800, // Set maximum width for larger screens
+                bgcolor: "background.paper",
+                border: "2px solid #000",
+                boxShadow: 24,
+                p: 4,
+                overflowY: "auto", // Add scrollable behavior
+                maxHeight: "80vh", // Set maximum height for the modal content
+              }}
+            >
+              <Row>
+                <Col>
+                  <Typography
+                    id="modal-modal-title"
+                    variant="h6"
+                    component="h2"
+                  >
+                    PROSHOP ECOMMERCE SITE
+                  </Typography>
+                </Col>
+                <Col className="modal-close-icon" onClick={handleCloseFitnessModal} xs={1}>
+                  <i className="fa-solid fa-xmark"></i>
+                </Col>
+              </Row>
+
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              Presenting an exceptional MERN-based ProShop eCommerce site,
+          meticulously crafted for a valued client. This feature-rich platform
+          showcases the seamless integration of the MERN stack, offering a
+          comprehensive user experience. Boasting top-notch authentication and
+          authorization features, users can securely create accounts, manage
+          their profiles, and make purchases with confidence. Additionally, the
+          site empowers administrators with exclusive capabilities to oversee
+          product inventory, manage orders, and optimize the overall shopping
+          experience. The dedication and expertise invested in building this
+          ProShop eCommerce site ensures a robust, user-friendly, and scalable
+          solution that meets the client's business needs. Witness the power of
+          this extraordinary platform soon!
+              </Typography>
+
+
+
+
+                <MuiButton href='https://github.com/Karns11/MERN-app' className="mt-5" variant="contained" color="secondary" type="submit">
+                  Source Code
+                </MuiButton>
+
+            </Box>
+          </MuiModal>
+
+      {/* <Modal show={showProshopModal} onHide={handleCloseProshopModal}>
         <Modal.Header closeButton>
           <Modal.Title>PROSHOP ECOMMERCE SITE</Modal.Title>
         </Modal.Header>
@@ -263,7 +386,7 @@ const Projects = () => {
             </Button>
           </div>
         </Modal.Footer>
-      </Modal>
+      </Modal> */}
       <Modal show={showTodoModal} onHide={handleCloseTodoModal}>
         <Modal.Header closeButton>
           <Modal.Title>MERN STACK TO-DO APP</Modal.Title>
