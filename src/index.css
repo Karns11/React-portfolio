@@ -241,7 +241,7 @@ ul {
   list-style: none;
 }
 .footer {
-  background-color: #24262b;
+  background-color: black;
   padding: 10rem 0;
   clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
 }

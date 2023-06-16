@@ -30,6 +30,12 @@ const Footer = () => {
           >
             <i className="fab fa-linkedin-in"></i>
           </a>
+          <a
+            data-aos="fade-up"
+            href="https://github.com/Karns11"
+          >
+            <i className="fab fa-github"></i>
+          </a>
         </div>
       </div>
     </footer>

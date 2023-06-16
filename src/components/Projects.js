@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import toDo from "../assets/mern-todo.mp4";
 import NbaStats from "../assets/NBA-Stats.jpg";
-import { Button, Col, Modal, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import letsFitSwole from "../assets/letsfitswole.png"
@@ -13,7 +12,6 @@ import Box from '@mui/material/Box';
 const Projects = () => {
   const [showFitnessModal, setShowFitnessModal] = useState(false);
   const [showProshopModal, setShowProshopModal] = useState(false);
-  const [showTodoModal, setShowTodoModal] = useState(false);
   const [showNbaStatsModal, setShowNbaStatsModal] = useState(false);
 
   const handleCloseFitnessModal = () => setShowFitnessModal(false);
@@ -21,9 +19,6 @@ const Projects = () => {
 
   const handleCloseProshopModal = () => setShowProshopModal(false);
   const handleShowProshopModal = () => setShowProshopModal(true);
-
-  const handleCloseTodoModal = () => setShowTodoModal(false);
-  const handleShowTodoModal = () => setShowTodoModal(true);
 
   const handleCloseNbaStatsModal = () => setShowNbaStatsModal(false);
   const handleShowNbaStatsModal = () => setShowNbaStatsModal(true);
@@ -87,33 +82,7 @@ const Projects = () => {
           </Col>
         </Row>
 
-        <Row className="d-flex">
-          <Col
-            data-aos="fade-right"
-            style={{
-              border: "2px solid black",
-              borderRadius: "15px",
-              boxShadow: "1rem 1rem 2rem black",
-            }}
-            className="my-5 proj-card"
-          >
-            <h3 className="pt-2 text-light project-name">
-              MERN Stack To-Do App
-            </h3>
-            <video controls loop className="video-fluid w-50">
-              <source src={toDo} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <div className="proj-buttons mb-5">
-              <Button onClick={handleShowTodoModal} className="mx-2">
-                More Info
-              </Button>
-              <Button href="https://github.com/Karns11/MERN-Todo-App">
-                Source Code
-              </Button>
-            </div>
-          </Col>
-        </Row>
+
 
         <Row className="d-flex">
           <Col
@@ -128,12 +97,12 @@ const Projects = () => {
             <h3 className="pt-2 text-light project-name">NBA STATS APP</h3>
             <img className="proj-img" src={NbaStats} alt="NBA stats app"></img>
             <div className="proj-buttons mb-5">
-              <Button onClick={handleShowNbaStatsModal} className="mx-2">
+              <MuiButton variant="contained" color='secondary' onClick={handleShowNbaStatsModal} className="mx-2">
                 More Info
-              </Button>
-              <Button href="https://natesnbastatsapp.netlify.app/">
+              </MuiButton>
+              <MuiButton variant="contained" color='secondary' href="https://natesnbastatsapp.netlify.app/">
                 Live Demo
-              </Button>
+              </MuiButton>
             </div>
           </Col>
         </Row>
@@ -320,7 +289,7 @@ const Projects = () => {
                     PROSHOP ECOMMERCE SITE
                   </Typography>
                 </Col>
-                <Col className="modal-close-icon" onClick={handleCloseFitnessModal} xs={1}>
+                <Col className="modal-close-icon" onClick={handleCloseProshopModal} xs={1}>
                   <i className="fa-solid fa-xmark"></i>
                 </Col>
               </Row>
@@ -387,42 +356,69 @@ const Projects = () => {
           </div>
         </Modal.Footer>
       </Modal> */}
-      <Modal show={showTodoModal} onHide={handleCloseTodoModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>MERN STACK TO-DO APP</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          Allow me to introduce my extraordinary MERN stack ToDo app, a
-          testament to my journey as a full-stack developer. This project holds
-          a special place in my heart as it marks my first venture into the
-          world of MERN stack development, providing me with invaluable learning
-          experiences. I'm thrilled to share that this app is packed with
-          fantastic features that have helped me grasp the ins and outs of full
-          stack development. As a personal user, I can confidently say that this
-          app has become an indispensable tool in my daily routine, and I
-          couldn't be happier with how it has turned out. It's a true reflection
-          of my dedication and growth as a developer.
-        </Modal.Body>
-        <Modal.Footer>
-          <div className="modal-buttons">
-            <Button
-              className="modal-close-button"
-              variant="secondary"
-              onClick={handleCloseTodoModal}
+
+<MuiModal
+            open={showNbaStatsModal}
+            onClose={handleCloseNbaStatsModal}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box
+              className="modal-box"
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)", // Adjust width based on screen size
+                maxWidth: 800, // Set maximum width for larger screens
+                bgcolor: "background.paper",
+                border: "2px solid #000",
+                boxShadow: 24,
+                p: 4,
+                overflowY: "auto", // Add scrollable behavior
+                maxHeight: "80vh", // Set maximum height for the modal content
+              }}
             >
-              Close
-            </Button>
-            <Button
-              className="modal-code-button"
-              variant="secondary"
-              href="https://github.com/Karns11/MERN-Todo-App"
-            >
-              Source Code
-            </Button>
-          </div>
-        </Modal.Footer>
-      </Modal>
-      <Modal show={showNbaStatsModal} onHide={handleCloseNbaStatsModal}>
+              <Row>
+                <Col>
+                  <Typography
+                    id="modal-modal-title"
+                    variant="h6"
+                    component="h2"
+                  >
+                    NBA STATS APP
+                  </Typography>
+                </Col>
+                <Col className="modal-close-icon" onClick={handleCloseNbaStatsModal} xs={1}>
+                  <i className="fa-solid fa-xmark"></i>
+                </Col>
+              </Row>
+
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              Introducing an NBA stats application developed with React and
+          Bootstrap! This dynamic application leverages the power of the
+          balldontlie API to provide users with comprehensive NBA statistics. By
+          using Axios, I seamlessly made API requests to retrieve real-time
+          data, ensuring up-to-date information. Originally designed with a
+          focus on sports betting, this application empowers users to make
+          informed decisions. With a sleek and intuitive user interface, users
+          can easily navigate through player and team stats, game results, and
+          historical data. Stay on top of the game, analyze trends, and gain
+          insights to enhance your sports betting strategies with this powerful
+          NBA stats application.
+              </Typography>
+
+
+
+
+                <MuiButton href='https://github.com/Karns11/New-NBA-App' className="mt-5" variant="contained" color="secondary" type="submit">
+                  Source Code
+                </MuiButton>
+
+            </Box>
+          </MuiModal>
+      
+      {/* <Modal show={showNbaStatsModal} onHide={handleCloseNbaStatsModal}>
         <Modal.Header closeButton>
           <Modal.Title>MERN STACK TO-DO APP</Modal.Title>
         </Modal.Header>
@@ -457,7 +453,7 @@ const Projects = () => {
             </Button>
           </div>
         </Modal.Footer>
-      </Modal>
+      </Modal> */}
     </section>
   );
 };
