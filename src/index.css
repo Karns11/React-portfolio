@@ -219,6 +219,22 @@ body {
   animation: moveUpDown 5s infinite;
 }
 
+@media (max-width: 576px) {
+  .proj-card {
+    max-width: 85vw;
+    margin-right: 2.75rem;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .exp-card {
+    max-width: 85vw;
+    margin-right: 2rem;
+    margin-left: auto;
+  }
+}
+
 .proj-img {
   width: 50%;
 }
@@ -235,6 +251,7 @@ body {
   margin: 0 auto;
   width: 50%;
   margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 
 ul {
@@ -391,4 +408,8 @@ details {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+}
+
+.demo-btn:hover {
+  color: white;
 }

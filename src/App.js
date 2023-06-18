@@ -144,7 +144,7 @@ function App() {
       <button
         style={{ position: "fixed", bottom: "20px", right: "20px" }}
         onClick={handleShowEmailModal}
-        className="circle-button"
+        className="circle-button mb-4"
       >
         Say Hi!
         <i className="fa-solid fa-pen-to-square pt-2"></i>
